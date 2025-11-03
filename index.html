@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senate vote</title>
+    <style>
+        *{
+            text-align: center;
+        }
+
+            body{
+                text-align: center;
+            }
+            .vote-counts{
+                display: flex;
+                gap: 100px;
+                text-align: center;
+                border: none;
+                width: 100%;
+                background-color: whitesmoke;
+                border-radius: 10px;
+            }
+            .vote-box{
+                padding: 35px;
+                border: none;
+                width:10000000px;
+                border-radius: 15px;
+            }
+        
+        .vote-button{
+            margin: 0 10px;
+            padding: 10px 15px;
+            font-size: 13px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 7px;
+            margin-top: 20px;
+        }
+        @media(min-width:1024px) and (max-width:1280px){
+            .vote-counts{
+                width:60% ;
+                margin: auto;
+                
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="vote-container">
+        <h2>Cast your vote on this Bill</h2>
+        <div class="vote-counts" style="text-align: center;" >
+            <div class="vote-box">
+                <span id="votesFor">0</span>Votes
+
+            </div>
+            <div class="vote-box">
+                <span id="votesAgainst">0</span>Votes
+
+            </div>
+        </div>
+        <button class="vote-button" onclick="vote('for')">Vote for Bill</button>
+        <button class="vote-button" onclick="vote('against')">Vote Against Bill</button>
+    </div>
+    <script>
+        let votesFor = 0;
+        let votesAgainst = 0;
+
+        function vote(type){
+            if (type==='for'){
+                votesFor++;
+        document.getElementById('votesFor').innerText=votesFor;    
+            } else if (type=== 'against'){
+                votesAgainst++;
+        document.getElementById('votesAgainst').innerText=votesAgainst;       
+            }
+
+        }
+    </script>
+</body>
+</html>
